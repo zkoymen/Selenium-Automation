@@ -1,11 +1,9 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Test1 {
+public class FormTest {
 
     public static void main(String[] args) {
 
@@ -15,8 +13,16 @@ public class Test1 {
         // Create the driver
         WebDriver driver = new ChromeDriver();
 
+
         driver.get("https://demoqa.com/text-box");
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
+
+
+
+
+        //Scroll down the page because adds intercept input form areas
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView()", submitBtn);
 
 
         // Find username
@@ -43,9 +49,26 @@ public class Test1 {
         permAddress.click();
         permAddress.sendKeys("Yakutistan, Russia");
 
-        // Finally click Submit button
+
+        // Finally need is to click Submit button
         WebElement submitBtn = driver.findElement(By.id("submit"));
         submitBtn.click();
 
+
+        // Read texts -name and email
+        WebElement nameText = driver.findElement(By.xpath("//div/p[@id='name']"));
+        String name =nameText.getText();
+        System.out.println(name);
+
+
+        WebElement emailText = driver.findElement(By.xpath("//div/p[@id='email']"));
+        String emailFetched = emailText.getText();
+        System.out.println(emailFetched);
+
+
+
+
+
+        // Implement scrolling to find elements
     }
 }
