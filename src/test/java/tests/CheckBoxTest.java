@@ -35,6 +35,8 @@ public class CheckBoxTest {
         // Print class name
         System.out.println(homeCheckBoxClassName);
 
+
+        // isSelected Method is better
         // Check if box is checked
         if (homeCheckBoxClassName.equals("rct-icon rct-icon-check")) {
             System.out.println("Checkbox is checked");
