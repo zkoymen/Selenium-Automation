@@ -42,6 +42,16 @@ public class ClickTypes {
         System.out.println(outputText.getText());
 
 
+        // Dynamic Click --> #id changes with every reload
+        // Use XPATH to capture them better
+        WebElement dynamicClick = driver.findElement(By.xpath("//div/button[starts-with(text(), \"Click Me\")]"));
+        dynamicClick.click();
+
+        // Get text message
+        outputText = driver.findElement(By.id("dynamicClickMessage"));
+        System.out.println(outputText.getText());
+
+
 
 
 
