@@ -41,6 +41,13 @@ public class BrokenLinkTest {
         System.out.println(statusCode);
         System.out.println(brokenImageUrl);
 
+        if (statusCode == 200) {
+            System.out.println("Valid image!");
+        } else {
+            System.out.println("Invalid image!");
+        }
+
+
         // for the broken link this time --> not the image
         getRequest = new HttpGet(brokenLinkUrl);
         response = client.execute(getRequest);
