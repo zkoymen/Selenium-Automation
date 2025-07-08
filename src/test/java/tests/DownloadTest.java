@@ -29,6 +29,13 @@ public class DownloadTest {
 
         isFileDownloaded(path, fileName);
 
+
+        // ---------------- UPLOAD PART -------------------
+        WebElement uploadBtn = driver.findElement(By.id("uploadFile"));
+        uploadBtn.sendKeys("icon.png");
+
+
+
     }
 
     public static boolean isFileDownloaded(String path, String fileName) {
