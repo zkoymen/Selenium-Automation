@@ -21,7 +21,7 @@ public class DownloadTest {
         downloadBtn.click();
 
         // Check if it is downloaded or not
-        String path = "C:\\Users\\testuser\\Downloads";
+        String path = System.getProperty("user.home") + "\\Downloads";
         String fileName = "sampleFile.jpeg";
 
         // wait a bit --> system does not recognize newly downloaded file
@@ -32,7 +32,7 @@ public class DownloadTest {
 
         // ---------------- UPLOAD PART -------------------
         WebElement uploadBtn = driver.findElement(By.id("uploadFile"));
-        uploadBtn.sendKeys("icon.png");
+        uploadBtn.sendKeys(System.getProperty("user.home") + "\\Desktop\\icon.png");
 
 
 
